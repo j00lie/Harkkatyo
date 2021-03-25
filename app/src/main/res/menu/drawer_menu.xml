@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu_enterData"
+            android:icon="@drawable/ic_edit"
+            android:title="Edit weight entries"/>
+        <item android:id="@+id/menu_showChart"
+            android:icon="@drawable/ic_show_chart"
+            android:title="Show weight progress"/>
+        <item android:id="@+id/menu_LogOut"
+            android:icon="@drawable/ic_logout"
+            android:title="Log out"/>
+    </group>
+</menu>
