@@ -21,6 +21,10 @@ public class Fragment_DataEntry extends Fragment {
     CalendarView calendarView;
     EditText weightEntry;
 
+    EntryHandler entryHandler = new EntryHandler();
+    DataEntry dataEntry = new DataEntry();
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class Fragment_DataEntry extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, dayOfMonth);
                 date = calendar.getTime();
+                dataEntry.setDate(date);
             }
         });
     }
@@ -51,6 +56,8 @@ public class Fragment_DataEntry extends Fragment {
             weight = 0;
         }else{
             weight = Float.parseFloat(weightEntry.getText().toString());
+            dataEntry.setWeight(weight);
         }
+        entryHandler.addEntry(dataEntry);
     }
 }
