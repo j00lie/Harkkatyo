@@ -1,12 +1,13 @@
 package com.example.ht;
 
 public class Person {
-    int age;
-    float height;
-
-    public Person(int age, float height){
-        this.age = age;
-        this.height = height;
+    private int age;
+    private float height;
+    private static Person person = new Person();
+    public Person(){
+    }
+    public static Person getInstance(){
+        return person;
     }
     public int getAge() {
         return age;

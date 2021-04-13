@@ -7,36 +7,27 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private DrawerLayout drawerLayout;
 
-
+    Context context = MainActivity.this;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         setup_menu();
-
-
-
-
     }
     public void setup_menu(){
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -62,13 +53,9 @@ public class MainActivity extends AppCompatActivity {
                                 new Fragment_DataEntry()).addToBackStack(null).commit();
                         break;
                     case R.id.menu_showChart:
-                        //Open chart ragment
+                        //Open chart fragment
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new Fragment_ShowChart()).addToBackStack(null).commit();
-                    case R.id.menu_LogOut:
-                        //Log out -> return to log in activity
-                        break;
-
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
@@ -78,9 +65,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START); //Check that backpress doesn't kill the whole app, just close the menu
+            drawerLayout.closeDrawer(GravityCompat.START); //Check that backpress doesn't kill the whole app, just closes the menu
         }else{
             super.onBackPressed();
         }
     }
+    public void openProfile(View view){
+        //Open profile fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new Fragment_profile()).addToBackStack(null).commit();
+
+    }
+    public void openBMIcomparison(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new Fragment_BMIcomparison()).addToBackStack(null).commit();
+    }
+
 }

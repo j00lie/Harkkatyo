@@ -7,8 +7,6 @@
         <item android:id="@+id/menu_showChart"
             android:icon="@drawable/ic_show_chart"
             android:title="Show weight progress"/>
-        <item android:id="@+id/menu_LogOut"
-            android:icon="@drawable/ic_logout"
-            android:title="Log out"/>
+
     </group>
 </menu>

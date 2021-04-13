@@ -4,8 +4,6 @@ import java.util.Date;
 
 public class DataEntry {
 
-
-
     private float weight;
     private Date date;
 
@@ -25,5 +23,8 @@ public class DataEntry {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+    public String toString(){
+        return "pvm: " + date + "paino:" + weight;
     }
 }

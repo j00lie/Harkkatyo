@@ -2,51 +2,61 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
 
-    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
 
-
-
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_700"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/purple_700"
-                android:id="@+id/toolbar"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                android:elevation="4dp"/>
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="284dp"
+                android:layout_height="242dp"
+                android:layout_gravity="center"
+                android:onClick="openBMIcomparison"
+                app:srcCompat="@mipmap/burgeri_etu" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="317dp"
-                    android:layout_height="375dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@mipmap/burgeri_etu" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="openProfile"
+                android:text="Personal infromation"
+                android:textSize="36sp" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="WeightWatcher"
-                    android:textSize="36sp" />
-            </FrameLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="180dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center"
+                android:text="Click to calculate BMI"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
