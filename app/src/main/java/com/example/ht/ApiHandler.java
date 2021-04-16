@@ -28,9 +28,9 @@ public class ApiHandler {
                 for (int i = 0; i < jsonArray.length(); i++){
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     if(jsonObject.getString("indicator").equals("4461")){
-                        age_group = "yli 64y";
+                        age_group = "over 64y";
                     }else if (jsonObject.getString("indicator").equals("4460")){
-                        age_group = "20v - 64y";
+                        age_group = "20y - 64y";
                     }else{
                         age_group = "all ages";
                     }
