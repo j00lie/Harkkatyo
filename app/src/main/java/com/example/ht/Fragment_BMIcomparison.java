@@ -20,7 +20,7 @@ public class Fragment_BMIcomparison extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_bmicomparison, container, false);
-        context = container.getContext();
+        context = container.getContext(); // Get the context that is needed when calculating BMI, due to the toast messages in the function
         Button btn_showBMI = view.findViewById(R.id.btn_calculateBMI);
         btn_showBMI.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,7 @@ public class Fragment_BMIcomparison extends Fragment {
     public void showStats(){
         ApiHandler ah = new ApiHandler();
         TextView BMIstats = view.findViewById(R.id.textView_BMIstats);
-        String bmi_info = "Ylipainoisten(BMI > 30) osuus koko väestöstä vuonna 2019 oli " + ah.readJSON() + "%";
+        String bmi_info = "Ylipainoisten(BMI > 30) osuus koko väestöstä vuonna 2019 oli " + ah.readJSON() ;
         BMIstats.setText(bmi_info);
     }
 }

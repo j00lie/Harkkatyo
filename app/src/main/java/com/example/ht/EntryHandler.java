@@ -31,13 +31,16 @@ public class EntryHandler {
     public void addEntry(DataEntry entry){
         dataEntries.add(entry);
     }
+    public void deleteEntries(){
+        dataEntries.clear();
+    }
     public ArrayList<DataEntry> returnEntries(){
 
         return dataEntries;
     }
     public void writeLog(Context context){
         try {
-            OutputStreamWriter ows = new OutputStreamWriter(context.openFileOutput("logi.csv", Context.MODE_PRIVATE));
+            OutputStreamWriter ows = new OutputStreamWriter(context.openFileOutput("log.csv", Context.MODE_PRIVATE));
             ows.write("Date;Weight\n");
             for(int i = 0; i < dataEntries.size(); i++){
                 ows.write(dataEntries.get(i).getDate().toString() + ";" + dataEntries.get(i).getWeight() + "\n");

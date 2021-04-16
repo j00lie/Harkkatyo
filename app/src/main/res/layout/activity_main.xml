@@ -42,8 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:onClick="openProfile"
-                android:text="Personal infromation"
+                android:text="Weight Watcher"
                 android:textSize="36sp" />
 
             <TextView

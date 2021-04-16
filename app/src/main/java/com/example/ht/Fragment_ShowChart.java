@@ -43,7 +43,6 @@ public class Fragment_ShowChart extends Fragment {
         return view;
     }
 
-
     public void setupLineChart(){
         List<Long> datesInMillis = new ArrayList<>();
         //Sort original entrylist by date, so that the graph doesn't explode..
@@ -80,17 +79,13 @@ public class Fragment_ShowChart extends Fragment {
                 return dateString;
             }
         });
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM_INSIDE);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setLabelCount(chartEntries.size(), true); // Only the amount of datevalues are shown that exist in the data
+        lineChart.getDescription().setEnabled(false); // Removes the default "Description label"
         xAxis.setDrawGridLines(false);
-        xAxis.setGranularity(1f); // only intervals of 1 day
+        //xAxis.setGranularity(1f); // Only intervals of 1 day
         xAxis.setTextSize(8);
         lineChart.invalidate();
-        /*
-        Ongelmat:
-        pvm ei näy heti ekan entryn lisäyksen jälkeen
-        Ei voi lisää useampia entryjä, vaan pitää käydä välissä aina graafifragmentin puolella
-         */
-
     }
 
 }

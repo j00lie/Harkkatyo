@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class BMICalc {
     private double bmi;
-    Person person = Person.getInstance();
+    private Person person = Person.getInstance();
 
     public double calculateBMI(Context context) {
         //Calculate latest bmi value

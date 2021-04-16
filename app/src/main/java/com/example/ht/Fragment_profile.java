@@ -14,9 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class Fragment_profile extends Fragment {
-    View view;
-    Context context;
-    Person person = Person.getInstance();
+    private View view;
+    private Context context;
+    private Person person = Person.getInstance();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

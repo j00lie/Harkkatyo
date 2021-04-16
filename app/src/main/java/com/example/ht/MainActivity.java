@@ -18,18 +18,16 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private DrawerLayout drawerLayout;
-
-    Context context = MainActivity.this;;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setup_menu();
+
+        setupMenu();
     }
-    public void setup_menu(){
+    //Creates the sidemenu
+    public void setupMenu(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,27 +54,30 @@ public class MainActivity extends AppCompatActivity {
                         //Open chart fragment
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new Fragment_ShowChart()).addToBackStack(null).commit();
+                        break;
+
+                    case R.id.menu_profile:
+                        //Open profile fragment
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new Fragment_profile()).addToBackStack(null).commit();
+                        break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
     }
+    //Check that backpress doesn't kill the whole app, just closes the menu
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START); //Check that backpress doesn't kill the whole app, just closes the menu
+            drawerLayout.closeDrawer(GravityCompat.START);
         }else{
             super.onBackPressed();
         }
     }
-    public void openProfile(View view){
-        //Open profile fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new Fragment_profile()).addToBackStack(null).commit();
-
-    }
     public void openBMIcomparison(View view){
+        //Open BMI comparison fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new Fragment_BMIcomparison()).addToBackStack(null).commit();
     }
