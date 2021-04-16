@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Weight Watcher"
+                android:text="@string/weight_watcher"
                 android:textSize="36sp" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_width="180dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center"
-                android:text="Click to calculate BMI"
+                android:text="@string/click_to_calculate_bmi"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 

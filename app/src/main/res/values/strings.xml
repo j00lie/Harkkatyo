@@ -26,5 +26,7 @@
     <string name="save_infromation">Save infromation</string>
     <string name="enter_age">Enter age</string>
     <string name="enter_height">Enter height</string>
+    <string name="weight_watcher">Weight Watcher</string>
+    <string name="click_to_calculate_bmi">Click to calculate BMI</string>
 
 </resources>
