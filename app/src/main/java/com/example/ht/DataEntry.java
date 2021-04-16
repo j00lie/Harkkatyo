@@ -24,7 +24,5 @@ public class DataEntry {
     public void setDate(Date date) {
         this.date = date;
     }
-    public String toString(){
-        return "pvm: " + date + "paino:" + weight;
-    }
+
 }

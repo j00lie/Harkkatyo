@@ -48,7 +48,7 @@ public class Fragment_BMIcomparison extends Fragment {
     public void showStats(){
         ApiHandler ah = new ApiHandler();
         TextView BMIstats = view.findViewById(R.id.textView_BMIstats);
-        String bmi_info = "Ylipainoisten(BMI > 30) osuus koko väestöstä vuonna 2019 oli " + ah.readJSON() ;
+        String bmi_info = "The percentage of overweight (BMI > 30) people in Finland for year 2019 was " + ah.readJSON() ;
         BMIstats.setText(bmi_info);
     }
 }

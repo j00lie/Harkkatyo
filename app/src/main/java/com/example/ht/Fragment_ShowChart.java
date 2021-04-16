@@ -80,7 +80,7 @@ public class Fragment_ShowChart extends Fragment {
             }
         });
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setLabelCount(chartEntries.size(), true); // Only the amount of datevalues are shown that exist in the data
+        xAxis.setLabelCount(chartEntries.size(), true); // Only the amount of date values are shown that exist in the data
         lineChart.getDescription().setEnabled(false); // Removes the default "Description label"
         xAxis.setDrawGridLines(false);
         //xAxis.setGranularity(1f); // Only intervals of 1 day

@@ -28,13 +28,13 @@ public class ApiHandler {
                 for (int i = 0; i < jsonArray.length(); i++){
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     if(jsonObject.getString("indicator").equals("4461")){
-                        age_group = "yli 64v";
+                        age_group = "yli 64y";
                     }else if (jsonObject.getString("indicator").equals("4460")){
-                        age_group = "20v - 64v";
+                        age_group = "20v - 64y";
                     }else{
-                        age_group = "kaikenikäiset";
+                        age_group = "all ages";
                     }
-                    bmi_stats = jsonObject.getString("value") + "%" + " ikäluokassa " + age_group;
+                    bmi_stats = jsonObject.getString("value") + "%" + " in age group: " + age_group;
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
